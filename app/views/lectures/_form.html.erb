@@ -1,0 +1,38 @@
+<%= form_with(model: lecture, local: true, :html => { :role => 'form', :multipart => true}) do |form| %>
+  <% if lecture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lecture.errors.count, "error") %> prohibited this lecture from being saved:</h2>
+
+      <ul>
+      <% lecture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.cktext_area :content, id: :lecture_content, as: :ckeditor,input_html: {ckeditor: { language: 'us',toolbar: 'Full' }} %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :upload_file %>
+    <%= form.file_field :upload_file, id: :lecture_upload_file %>
+  </div>
+  <div class="field">
+
+  <%= form.label :course %><br />
+  <% unless Course.all.blank? %>
+  <%= form.collection_select(:course_id, Course.all, :id, :title ,{:selected => Course.first.title}) %>
+<% else %>
+<select>
+<option>There is no courses</option>
+</select>
+<% end %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

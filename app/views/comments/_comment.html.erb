@@ -1,0 +1,13 @@
+<h3>This lecture has <%= pluralize(@comments.count,"comment") %></h3>
+<% @comments.each do |comment| %>
+    <label><%= comment.user.name%></label>
+<div style="width:890px;padding-top:7px;border-radius: 5px;background-color:white;height:50px"><span style="padding-left:10px"><%= comment.content %></span></div>
+<% if current_user == comment.user %>
+<%= link_to "Delete Comment", [comment.lecture,comment], method: :delete %> &nbsp;|&nbsp 
+<%= link_to "Edit comment", edit_lecture_comment_path(comment.lecture,comment) %>
+<% end %>
+<% end %>
+<br><br>
+<%= render 'comments/form' %>
+
+

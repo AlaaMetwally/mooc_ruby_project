@@ -1,0 +1,9 @@
+<div class="container">
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<%= link_to ' Edit', edit_course_path(@course) ,:style=> 'color:#FFFFFF;',:class=>"btn btn-warning btn-sm glyphicon glyphicon-edit" %>
+<%= link_to ' Back', courses_path,:style=> 'color:#FFFFFF;',:class=>"btn btn-info btn-sm	glyphicon glyphicon-arrow-left" %>
+</div>

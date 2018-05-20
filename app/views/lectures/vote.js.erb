@@ -1,0 +1,14 @@
+<% if current_user.liked? @lecture %>
+    $('.like-btn').addClass('liked');
+    $('.down').removeClass('fa fa-thumbs-down');
+    $('.down').addClass('fa fa-thumbs-up');
+    $('.fa-thumbs-up').removeClass('down');
+    $('.fa-thumbs-up').addClass('up');
+<% else %>
+    $('.like-btn').removeClass('liked');
+    $('.up').removeClass('fa fa-thumbs-up');
+    $('.up').addClass('fa fa-thumbs-down');
+    $('.fa-thumbs-down').removeClass('up');
+    $('.fa-thumbs-down').addClass('down');
+<% end %>
+$('.likes-count').html("<%=@lecture.get_upvotes.size %>")

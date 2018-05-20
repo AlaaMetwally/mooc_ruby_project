@@ -1,0 +1,5 @@
+I"o(function() {
+  document.getElementsByClassName("col col-actions").innerHTML = "Actions";
+
+}).call(this);
+:ET

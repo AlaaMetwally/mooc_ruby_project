@@ -1,0 +1,15 @@
+I"ì(function() {
+  var ready;
+
+  ready = function() {
+    return $('.ckeditor').each(function() {
+      return CKEDITOR.replace('.ckeditor');
+    });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET

@@ -1,0 +1,5 @@
+I"W(function() {
+  console.log(document.getElementsByTagName("th"));
+
+}).call(this);
+:ET

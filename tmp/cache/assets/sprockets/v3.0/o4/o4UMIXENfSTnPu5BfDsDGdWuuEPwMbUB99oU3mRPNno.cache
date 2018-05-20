@@ -1,0 +1,5 @@
+I"b(function() {
+  console.log(document.getElementsByClassName('col-actions'));
+
+}).call(this);
+:ET

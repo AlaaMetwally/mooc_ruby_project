@@ -1,0 +1,5 @@
+I"Z(function() {
+  $(".col-actions").append("<a href='#'>Actions</a>");
+
+}).call(this);
+:ET

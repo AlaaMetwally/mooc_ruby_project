@@ -1,0 +1,39 @@
+<div class="container">
+<p>
+  <strong>Content:</strong>
+  <%= raw(@lecture.content) %>
+</p>
+
+<p>
+  <strong>Upload file : </strong>
+  <%= link_to " Download", {:controller => :lectures, :action => :download, :id => @lecture.id },:style=> 'color:#FFFFFF;',:class=>"btn btn-primary btn-sm glyphicon glyphicon-download"%>
+</p>
+<p>
+  <strong>Course:</strong>
+  <%= @course_title %>
+</p>
+<h3 style="font-weight:bold"><span style="color:red"> * </span>Comments</h3>
+<%= render 'comments/comment' %>
+<%= link_to like_lecture_path(@lecture), class:"like-btn", method: :put, remote: :true do %>
+  <div>
+  <span><span class="likes-count">
+  <% if current_user and current_user.voted_for? @lecture  %>
+  <%= @lecture.get_upvotes.size %></span>&nbsp;&nbsp;<i class="fa-3x fa fa-thumbs-up up" ></i></span>
+<% else %>
+<%= @lecture.get_upvotes.size %></span>&nbsp;&nbsp;<i class="fa-3x fa fa-thumbs-down down" ></i></span>
+<% end %>
+
+
+<%= link_to ' Edit', edit_lecture_path(@lecture),:style=> 'color:#FFFFFF;',:class=>"btn btn-warning btn-sm glyphicon glyphicon-edit" %>
+<%= link_to ' Back', lectures_path ,:style=> 'color:#FFFFFF;',:class=>"btn btn-info btn-sm	glyphicon glyphicon-arrow-left" %>
+<%= link_to ' Spam', {:controller => :lectures, :action => :spam, :id => @lecture.id },:style=> 'color:#FFFFFF;',:class=>"btn btn-danger btn-sm	glyphicon glyphicon-warning-sign" %>
+</div>
+<% end %>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+I"M(function() {
+  config.register_javascript('admin.js');
+
+}).call(this);
+:ET

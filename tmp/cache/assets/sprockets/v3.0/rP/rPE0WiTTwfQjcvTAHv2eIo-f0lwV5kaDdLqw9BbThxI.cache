@@ -1,0 +1,5 @@
+I"S(function() {
+  $('.col col-actions').innerHTML += "Actions";
+
+}).call(this);
+:ET

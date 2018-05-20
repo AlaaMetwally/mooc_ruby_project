@@ -1,0 +1,15 @@
+I"ý(function() {
+  var ready;
+
+  ready = function() {
+    return $('.ckeditor').each(function() {
+      return CKEDITOR.replace('lecture_content'.attr('id'));
+    });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET

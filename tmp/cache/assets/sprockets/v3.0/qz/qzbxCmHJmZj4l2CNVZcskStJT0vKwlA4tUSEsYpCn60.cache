@@ -1,0 +1,5 @@
+I"?(function() {
+  $(".col").append($("a"));
+
+}).call(this);
+:ET

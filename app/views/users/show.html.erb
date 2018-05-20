@@ -1,0 +1,27 @@
+<div class="container">
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Date of birth:</strong>
+  <%= @user.date_of_birth %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender.name %>
+</p>
+
+<p>
+  <strong>Profile picture:</strong>
+  <%= image_tag @user.profile_picture,:style => 'padding-right:1000px' %>
+</p>
+
+<%= link_to ' Edit', edit_user_path(@user),:style=> 'color:#FFFFFF;',:class=>"btn btn-warning btn-sm glyphicon glyphicon-edit" %>
+<%= link_to ' Back', users_path,:style=> 'color:#FFFFFF;',:class=>"btn btn-info btn-sm	glyphicon glyphicon-arrow-left" %>
+</div>
